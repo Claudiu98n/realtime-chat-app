@@ -1,0 +1,29 @@
+- [x] create backend using Node.js
+    - [x] mvc structure (model-view-controller)
+    - [x] create .env file
+    - [x] create authentication routes via JWT ( login , register ) 
+    - [x] create postman collection for testing 
+    - [x] add validation for register route (username, email without duplicates) 
+    - [x] connect socket.io to node server
+    - [x] verify JWT when connecting to socket ( handshake )
+    - [x] crypt password ( register ) and decrypt password ( login )
+    - [x] store rooms and messages into db
+
+- [x] create React.js frontend 
+    - [x] install react-router for routing, axios for http request, socket.io
+    - [x] create env file for development and production containing server url
+    - [x] create and style authentication routes ( /signin, /register )
+    - [x] create and style chat app screens
+    - [x] give the user possibility to scroll down to the latest message
+    - [x] make chat app route a private route ( give access just to logged in users with jwt )
+    - [x] get all users from db
+    - [x] connect to socket and emit/receive messages according to chosen user
+    - [x] list all previous messages stored in db
+    - [x] highlight receiver div
+
+- [x] create docker-compose file
+- [x] connect backend to PostgreSQL db
+- [x] connect db to adminer
+- [x] create backend dockerfile
+- [x] create frontend dockerfile 
+- [x] deploy app locally

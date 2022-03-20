@@ -1,0 +1,57 @@
+version: "3.1"
+
+services:
+
+  react_fe:
+    build: './client'
+    ports: 
+    - 3000:3000
+    environment:
+      REACT_APP_SERVER_URL: http://localhost:5000
+    networks:
+      - gateway
+
+  node_be:
+    build: './server' 
+    ports:
+      - 5000:5000
+    environment:
+      NODE_ENV: development
+      DB_NAME: userdb
+      DB_USER: postgres
+      DB_PASS: postgres
+      JWT_SECRET: jWnZr4u7x!A%D*G-JaNdRgUkXp2s5v8y/B?E(H+MbPeShVmYq3t6w9z$C&F)J@NcRfTjWnZr4u7x!A%D*G-KaPdSgVkXp2s5v8y/B?E(H+MbQeThWmZq3t6w9z$C&F)J
+    networks:
+      - gateway
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+      - db-volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: userdb
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - db
+      - db-adminer
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - db-adminer
+
+volumes:
+  db-volume:
+networks:
+  gateway:
+  db:
+  db-adminer:
