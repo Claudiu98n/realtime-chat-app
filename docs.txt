@@ -12,6 +12,9 @@ Cum sa rulezi aplicatia local:
 1. docker-compose
 2. npm 
 
+Oricare din metode necesita sa ai aplicatia local
+- git clone https://github.com/Claudiu98n/realtime-chat-app.git
+
 1 ------------------------------
 requirements: 
 - docker instalat (https://docs.docker.com/desktop/windows/install/)
@@ -45,7 +48,7 @@ aici se executa npm install, dupa instalare npm start pentru a porni backend
 analog metoda docker, frontend se gaseste pe localhost:3000, backend :5000, db :5432
 
 --
-recomand prima metoda - e o metoda mai noua si mult mai rapida :D
+recomand prima metoda - e mult mai rapid :D
 
 --
 versionare git
@@ -55,9 +58,8 @@ pentru ca proiectul a fost si pana acum versionat de mine, in root se gaseste un
 recomandat ar fi sa il stergi inainte sa urci pe repo, nu vrem sa vada proful istoricul
 
 comenzi urcare in repo:
-echo "# realtime-chat-app" >> README.md
 git init
-git add README.md
+git add .
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Claudiu98n/realtime-chat-app.git (aici inlocuieste url cu url-ul repoului pe care l-ai creat)
